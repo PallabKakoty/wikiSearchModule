@@ -1,0 +1,33 @@
+@(message: String)
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Search Page</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/normalize.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/style.css")">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <a href="/" class="wikipedia-logo"></a>
+        <form class="searchForm">
+          <div class="searchForm-inputContainer">
+            <input type="search" class="searchForm-input" autofocus />
+            <button class="searchForm-inlineSubmit" type="submit"><img src="@routes.Assets.versioned("images/search.svg")" alt="Magnifying Glass" class="searchForm-searchIcon"></button>
+          </div>
+          <button class="searchForm-button searchForm-submit">Search</button>
+          <a class="searchForm-button searchForm-random" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank" title="Load random Wikipedia article">I'm Feeling Lucky</a>
+        </form>
+      </div>
+      <section class="resultsContainer">
+		</section>
+      <section class="moreResults">
+        <p class="hidden">No more results. Begin a new search.</p>
+        <button class="moreResults-button hidden">Load More</button>
+      </section>
+      <div class="loading-indicator hidden"></div>
+    </main>
+    <script src="@routes.Assets.versioned("javascripts/wiki.js")" type="text/javascript"></script>
+  </body>
+</html>
